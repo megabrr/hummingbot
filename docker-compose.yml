@@ -1,21 +1,21 @@
 services:
   hummingbot-1:
-    container_name: hummingbot
+    container_name: hummingbot-1
     # image: hummingbot/hummingbot:latest
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./conf:/home/hummingbot/conf
-      - ./conf/connectors:/home/hummingbot/conf/connectors
-      - ./conf/strategies:/home/hummingbot/conf/strategies
-      - ./conf/controllers:/home/hummingbot/conf/controllers
-      - ./conf/scripts:/home/hummingbot/conf/scripts
-      - ./logs:/home/hummingbot/logs
-      - ./data:/home/hummingbot/data
-      - ./certs:/home/hummingbot/certs
-      - ./scripts:/home/hummingbot/scripts
-      - ./controllers:/home/hummingbot/controllers
+      - ./config/hummingbot-1/conf:/home/hummingbot/conf
+      - ./config/hummingbot-1/conf/connectors:/home/hummingbot/conf/connectors
+      - ./config/hummingbot-1/conf/strategies:/home/hummingbot/conf/strategies
+      - ./config/hummingbot-1/conf/controllers:/home/hummingbot/conf/controllers
+      - ./config/hummingbot-1/conf/scripts:/home/hummingbot/conf/scripts
+      - ./config/hummingbot-1/logs:/home/hummingbot/logs
+      - ./config/hummingbot-1/data:/home/hummingbot/data
+      - ./config/hummingbot-1/certs:/home/hummingbot/certs
+      - ./config/hummingbot-1/scripts:/home/hummingbot/scripts
+      - ./config/hummingbot-1/controllers:/home/hummingbot/controllers
     logging:
       driver: "json-file"
       options:
@@ -25,22 +25,22 @@ services:
     stdin_open: true
     network_mode: host
   hummingbot-2:
-    container_name: hummingbot
+    container_name: hummingbot-2
     # image: hummingbot/hummingbot:latest
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./conf:/home/hummingbot/conf
-      - ./conf/connectors:/home/hummingbot/conf/connectors
-      - ./conf/strategies:/home/hummingbot/conf/strategies
-      - ./conf/controllers:/home/hummingbot/conf/controllers
-      - ./conf/scripts:/home/hummingbot/conf/scripts
-      - ./logs:/home/hummingbot/logs
-      - ./data:/home/hummingbot/data
-      - ./certs:/home/hummingbot/certs
-      - ./scripts:/home/hummingbot/scripts
-      - ./controllers:/home/hummingbot/controllers
+      - ./config/hummingbot-2/conf:/home/hummingbot/conf
+      - ./config/hummingbot-2/conf/connectors:/home/hummingbot/conf/connectors
+      - ./config/hummingbot-2/conf/strategies:/home/hummingbot/conf/strategies
+      - ./config/hummingbot-2/conf/controllers:/home/hummingbot/conf/controllers
+      - ./config/hummingbot-2/conf/scripts:/home/hummingbot/conf/scripts
+      - ./config/hummingbot-2/logs:/home/hummingbot/logs
+      - ./config/hummingbot-2/data:/home/hummingbot/data
+      - ./config/hummingbot-2/certs:/home/hummingbot/certs
+      - ./config/hummingbot-2/scripts:/home/hummingbot/scripts
+      - ./config/hummingbot-2/controllers:/home/hummingbot/controllers
     logging:
       driver: "json-file"
       options:
